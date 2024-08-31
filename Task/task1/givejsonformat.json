@@ -1,0 +1,20 @@
+[
+  {
+    "id": "input_node",
+    "structure":{
+        "email":{
+            "target":"output_node",
+            "location":"email"
+        }
+    }
+  },
+  {
+    "id": "output_node",
+    "structure":{
+        "email":{
+            "target":"none",
+            "location": "none"
+        }
+    }
+  }
+]

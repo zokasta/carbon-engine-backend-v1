@@ -1,0 +1,47 @@
+
+
+
+POST http://localhost:8000/system_api/generate-api/
+Content-Type: application/json
+
+{
+    "file": "makegame",
+    "format": [
+        {
+            "id": "input_node",
+            "structure": {
+                "email": {
+                    "target": "email_validator",
+                    "location": "email"
+                },
+                "password": {
+                    "target": "output_node",
+                    "location": "password"
+                }
+            }
+        },
+        {
+            "id": "email_validator",
+            "structure": {
+                "email": {
+                    "target": "output_node",
+                    "location": "email",
+                    "else": "Email is not valid"
+                }
+            }
+        },
+        {
+            "id": "output_node",
+            "structure": {
+                "email": {
+                    "target": "none",
+                    "location": "none"
+                },
+                "password": {
+                    "target": "none",
+                    "location": "none"
+                }
+            }
+        }
+    ]
+}

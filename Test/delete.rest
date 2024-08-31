@@ -1,0 +1,6 @@
+DELETE http://127.0.0.1:8000/system_api/delete-api/
+Content-Type: application/json
+
+{
+    "name": "makegame"
+}

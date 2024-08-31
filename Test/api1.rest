@@ -1,0 +1,8 @@
+
+POST http://localhost:8000/api/game/
+Content-Type: application/json
+
+{
+  "email":"faizrajput@gmail",
+  "password":"thisispassword"
+}
