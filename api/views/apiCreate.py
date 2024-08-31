@@ -46,7 +46,6 @@ def generate_function_content(input_mapping, output_node_id, file, format_struct
     # Build response data based on output node structure
     response_data = []
     for output_key, output_value in output_mapping.items():
-        # Find the input variable that corresponds to the output key
         input_var = next(
             (var for var, mapping in input_mapping.items() if mapping['location'] == output_key),
             None
