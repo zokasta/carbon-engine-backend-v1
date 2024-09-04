@@ -9,9 +9,17 @@ Content-Type: application/json
 			"id": "input_node",
 			"structure": {
 				"username": {
-					"target": "output_node",
-					"location": "email"
-				},
+					"fields":[
+						{
+							"target": "output_node",
+							"location": "email"
+						},
+						{
+							"target": "output_node",
+							"location": "password"
+						}
+					]
+				}
 				"password": {
 					"target": "output_node",
 					"location": "password"
@@ -37,3 +45,41 @@ Content-Type: application/json
 		}
 	]
 }
+
+
+
+# {
+# 	"file": "makegame",
+# 	"format": [
+# 		{
+# 			"id": "input_node",
+# 			"structure": {
+# 				"username": {
+# 					"target": "output_node",
+# 					"location": "email"
+# 				},
+# 				"password": {
+# 					"target": "output_node",
+# 					"location": "password"
+# 				},
+# 				"email": {
+# 					"target": "none",
+# 					"location": "none"
+# 				}
+# 			}
+# 		},
+# 		{
+# 			"id": "output_node",
+# 			"structure": {
+# 				"email": {
+# 					"target": "none",
+# 					"location": "none"
+# 				},
+# 				"password": {
+# 					"target": "none",
+# 					"location": "none"
+# 				}
+# 			}
+# 		}
+# 	]
+# }

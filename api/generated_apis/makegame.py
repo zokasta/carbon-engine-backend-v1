@@ -5,4 +5,5 @@ from rest_framework.response import Response
 @api_view(['POST'])
 def makegame(request):
     username = request.data.get('username')
-    return Response({ 'email': username })
+    password = request.data.get('password')
+    return Response({ 'email': username, 'password': password })
