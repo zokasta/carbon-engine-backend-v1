@@ -1,15 +1,20 @@
 import os
+from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from django.conf import settings
+from ..plugin.load_plugin import load_plugin
 
 def parse_structure(structure):
     if not isinstance(structure, list) or len(structure) < 2:
         raise ValueError("Invalid format structure. Ensure there is at least one input and one output node.")
 
-    input_node = structure[0]
-    output_node = structure[1]
+    input_node = next((node for node in structure if node['type'] == 'Input'), None)
+    output_node = next((node for node in structure if node['type'] == 'Output'), None)
+    plugins = {node['id']: node for node in structure if node['type'] == 'Plugin'}
+
+    if not input_node or not output_node:
+        raise ValueError("Format structure must contain at least one Input and one Output node.")
 
     input_mapping = {}
     for var, details in input_node.get('structure', {}).items():
@@ -20,14 +25,15 @@ def parse_structure(structure):
                 'target': details.get('target', 'none'),
                 'location': details.get('location', 'none')
             }]
-    
-    return input_mapping, output_node.get('id', 'output_node')
 
-def generate_function_content(input_mapping, output_node_id, file, format_structure):
+    return input_mapping, output_node.get('id', 'output_node'), plugins
+
+def generate_function_content(input_mapping, output_node_id, file, plugins):
     lines = [
-        "import re",
         "from rest_framework.decorators import api_view",
         "from rest_framework.response import Response",
+        "from rest_framework import status",
+        "from ..plugin.load_plugin import load_plugin",
         "",
         f"@api_view(['POST'])",
         f"def {file}(request):"
@@ -37,14 +43,17 @@ def generate_function_content(input_mapping, output_node_id, file, format_struct
     for var in input_mapping:
         lines.append(f"    {var} = request.data.get('{var}')")
 
-    # Extract the output node structure
-    output_node_structure = next(
-        (node for node in format_structure if node['id'] == output_node_id), 
-        None
-    )
+    # Process plugins
+    for var, mappings in input_mapping.items():
+        for mapping in mappings:
+            if mapping['target'] in plugins:
+                plugin = plugins[mapping['target']]
+                lines.append(f"    try:")
+                lines.append(f"        plugin = load_plugin('{mapping['target']}')")
+                lines.append(f"        {var} = plugin.run({var})")
+                lines.append(f"    except ValueError as ve:")
+                lines.append(f"        return Response({{'error': str(ve)}}, status=status.HTTP_400_BAD_REQUEST)")
     
-    output_mapping = output_node_structure.get('structure', {}) if output_node_structure else {}
-
     # Build response data based on input and output mapping
     response_data = []
     for var, mappings in input_mapping.items():
@@ -85,9 +94,9 @@ def api_generator(request):
         if not format_structure:
             return Response({'error': 'Format structure is required.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        input_mapping, output_node_id = parse_structure(format_structure)
+        input_mapping, output_node_id, plugins = parse_structure(format_structure)
 
-        function_content = generate_function_content(input_mapping, output_node_id, request.data.get('file', "generated_api"), format_structure)
+        function_content = generate_function_content(input_mapping, output_node_id, request.data.get('file', "generated_api"), plugins)
 
         app_name = "api"  # Replace with your app's name
         file_path = write_to_file(app_name, file_name, function_content)
