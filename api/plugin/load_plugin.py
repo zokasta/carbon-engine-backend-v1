@@ -4,10 +4,10 @@ import os
 def load_plugin(plugin_id):
     try:
         # Define the path to the plugins directory
-        plugins_directory = os.path.join(os.path.dirname(__file__), 'plugins')
+        plugins_directory = os.path.join(os.path.dirname(__file__), 'plugin')
         
         # Import the plugin module dynamically
-        plugin_module = importlib.import_module(f'plugins.{plugin_id}')
+        plugin_module = importlib.import_module(f'plugin.Email.py')
         
         # Assuming each plugin has a 'run' method
         if not hasattr(plugin_module, 'run'):
@@ -17,5 +17,5 @@ def load_plugin(plugin_id):
         
     except ModuleNotFoundError:
         raise ValueError(f"Plugin '{plugin_id}' not found.")
-    except ImportError:
-        raise ValueError(f"Error importing plugin '{plugin_id}'.")
+    # except ImportError:
+    #     raise ValueError(f"Error importing plugin '{plugin_id}'.")

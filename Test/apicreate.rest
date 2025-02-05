@@ -2,17 +2,67 @@
 POST http://localhost:8000/system_api/generate-api/
 Content-Type: application/json
 
+# {
+#   "file": "makegame",
+#   "format": [
+#     {
+#       "id": "Input_1725866871043",
+# 	  "type":"Input",
+#       "structure": {
+#         "username": {
+#           "fields": [
+#             {
+#               "target": "Output_1725866867893",
+#               "location": "email"
+#             }
+#           ]
+#         },
+#         "password": {
+#           "fields": [
+#             {
+#               "target": "Output_1725866867893",
+#               "location": "password"
+#             }
+#           ]
+#         }
+#       }
+#     },
+#     {
+#       "id": "Output_1725866867893",
+# 	  "type":"Output",
+#       "structure": {
+#         "email": {
+#           "fields": [
+#             {
+#               "target": "none",
+#               "location": "none"
+#             }
+#           ]
+#         },
+#         "password": {
+#           "fields": [
+#             {
+#               "target": "none",
+#               "location": "none"
+#             }
+#           ]
+#         }
+#       }
+#     }
+#   ]
+# }
+
 {
   "file": "makegame",
   "format": [
     {
-      "id": "Input_1725866871043",
-	  "type":"Input",
+      "id": "input_node",
+      "type": "Input",
       "structure": {
-        "username": {
+        "email": {
           "fields": [
             {
-              "target": "Output_1725866867893",
+              "target": "output_node_1",
               "location": "email"
             }
           ]
@@ -20,7 +70,7 @@ Content-Type: application/json
         "password": {
           "fields": [
             {
-              "target": "Output_1725866867893",
+              "target": "output_node_1",
               "location": "password"
             }
           ]
@@ -28,8 +78,8 @@ Content-Type: application/json
       }
     },
     {
-      "id": "Output_1725866867893",
-	  "type":"Output",
+      "id": "output_node_1",
+      "type": "Output",
       "structure": {
         "email": {
           "fields": [
