@@ -5,5 +5,6 @@ from ..plugin.load_plugin import load_plugin
 
 @api_view(['POST'])
 def makegame(request):
-    email = request.data.get('email')
-    password = request.data.get('password')
+	email = request.data.get('email')
+	password = request.data.get('password')
+	return Response({ email:email, password:password })

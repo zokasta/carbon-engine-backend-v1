@@ -1,0 +1,118 @@
+[
+  {
+    "id": "input_node",
+    "position": {
+      "x": 253.298351223552,
+      "y": 363.0268238605201
+    },
+    "type": "Input",
+    "typeFormat": "input",
+    "data": {
+      "id": "1",
+      "title": "Input Node",
+      "type": "Input",
+      "handleType": "source",
+      "positionHandel": "right",
+      "fields": [
+        {
+          "id": 0.9087431316470815,
+          "handle": "email_input",
+          "title": "email",
+          "type": "source"
+        },
+        {
+          "id": 0.6527479198406607,
+          "handle": "password_input",
+          "title": "password",
+          "type": "source"
+        }
+      ]
+    },
+    "width": 192,
+    "height": 191,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 253.298351223552,
+      "y": 363.0268238605201
+    },
+    "dragging": false
+  },
+  {
+    "id": "output_node_1",
+    "position": {
+      "x": 1008.3174120182107,
+      "y": 341.17552964974885
+    },
+    "type": "Output",
+    "typeFormat": "output",
+    "data": {
+      "id": "2",
+      "title": "Output Node",
+      "type": "Output",
+      "handleType": "target",
+      "positionHandel": "left",
+      "fields": [
+        {
+          "id": 0.9410777982907461,
+          "handle": "email_output",
+          "title": "email",
+          "type": "target"
+        },
+        {
+          "id": 0.6378714985833478,
+          "handle": "password_output",
+          "title": "password",
+          "type": "target"
+        }
+      ]
+    },
+    "width": 192,
+    "height": 191,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 1008.3174120182107,
+      "y": 341.17552964974885
+    },
+    "dragging": false
+  },
+  {
+    "id": "Plugin_1738744348241",
+    "type": "Plugin",
+    "position": {
+      "x": 503.5256293984038,
+      "y": 318.3008880199225
+    },
+    "data": {
+      "name": "Email Validator",
+      "id": 0.002880512170794214
+    },
+    "width": 152,
+    "height": 43,
+    "selected": true,
+    "positionAbsolute": {
+      "x": 503.5256293984038,
+      "y": 318.3008880199225
+    },
+    "dragging": false
+  },
+  {
+    "id": "Plugin_1738744363378",
+    "type": "Plugin",
+    "position": {
+      "x": 762.781630629713,
+      "y": 306.3515938531265
+    },
+    "data": {
+      "name": "Email Validator",
+      "id": 0.14045926108703988
+    },
+    "width": 152,
+    "height": 43,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 762.781630629713,
+      "y": 306.3515938531265
+    },
+    "dragging": false
+  }
+]
