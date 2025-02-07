@@ -5,5 +5,11 @@ from ..plugin.load_plugin import load_plugin
 
 @api_view(['POST'])
 def makegame(request):
-    email = request.data.get('email')
-    password = request.data.get('password')
+	email = request.data.get('email')
+	password = request.data.get('password')
+	try:
+		email_validator = load_plugin('email_validator')
+		email_validator.run(email)
+	except Exception as e:
+		return Response({'error':str(e)})
+	return Response({ email:email, email:password })
