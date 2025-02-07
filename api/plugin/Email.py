@@ -1,6 +1,5 @@
 class EmailValidator:
     def run(self, email):
-        print(email)
         if '@' not in email:
             raise ValueError("Invalid email address.")
         return email

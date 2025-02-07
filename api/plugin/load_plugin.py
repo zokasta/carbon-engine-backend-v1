@@ -1,16 +1,22 @@
 import importlib
-import os
-
+from .Email import EmailValidator
 def load_plugin(plugin_id):
+    if plugin_id.endswith('.py'):
+        plugin_id = plugin_id[:-3]
+    
     try:
-        plugins_directory = os.path.join(os.path.dirname(__file__), 'plugin')
+        # plugin_module = importlib.import_module(f'plugin.{plugin_id}')
         
-        plugin_module = importlib.import_module(f'plugin.Email.py')
-        if not hasattr(plugin_module, 'run'):
-            raise ValueError(f"Plugin '{plugin_id}' does not have a 'run' method.")
+        # if hasattr(plugin_module, 'get_plugin'):
+        #     plugin_instance = plugin_module.get_plugin()
+        # else:
+        #     plugin_instance = plugin_module
         
-        return plugin_module
+        # if not hasattr(plugin_instance, 'run'):
+        #     raise ValueError(f"Plugin '{plugin_id}' does not have a 'run' method.")
         
+        return EmailValidator()
+
     except ModuleNotFoundError:
         raise ValueError(f"Plugin '{plugin_id}' not found.")
     except ImportError:
