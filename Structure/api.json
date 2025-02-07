@@ -1,15 +1,20 @@
 {
   "api_id": "this is api id",
-  "filename":"makegame",
+  "filename": "makegame",
+  "type": "post",
   "elements": [
     {
-      "element_id": "input_node_1",
+      "element_id": "input_node",
       "name": "Input Node",
       "type": "input_node",
       "nodes": [
         {
           "node_id": "email_input_node",
           "display_name": "email"
+        },
+        {
+          "node_id": "password_input_node",
+          "display_name": "password"
         }
       ]
     },
@@ -21,6 +26,23 @@
         {
           "node_id": "email_output_node",
           "display_name": "email"
+        },
+        {
+          "node_id": "password_output_node",
+          "display_name": "password"
+        }
+      ]
+    },
+    {
+      "element_id": "email_validator",
+      "name": "Email Validator",
+      "type": "plugin",
+      "nodes": [
+        {
+          "node_id": "plugin_input"
+        },
+        {
+          "node_id": "plugin_output"
         }
       ]
     }
@@ -28,10 +50,24 @@
   "edges": [
     {
       "edge_id": "edge_id_1",
-      "source_id": "input_node_1",
-      "target_id": "output_node_1",
+      "source_id": "input_node",
+      "target_id": "Plugin_1738916480278",
       "source_node_id": "email_input_node",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_2",
+      "source_id": "Plugin_1738916480278",
+      "target_id": "output_node_1",
+      "source_node_id": "plugin_output",
       "target_node_id": "email_output_node"
+    },
+    {
+      "edge_id": "edge_id_3",
+      "source_id": "input_node",
+      "target_id": "output_node_1",
+      "source_node_id": "password_input_node",
+      "target_node_id": "password_output_node"
     }
   ]
 }

@@ -61,6 +61,8 @@ def generate_function_content(elements :list, edges, file, type):
 
     result.append(add_tabs(variable_lines,1))
     # return str(result)
+    
+    
   
     response_data = []
     for edge in edges: 
@@ -119,10 +121,10 @@ def api_generator(request):
                 {"error": "Elements not found"}, status=status.HTTP_400_BAD_REQUEST
             )
 
-        if not edges:
-            return Response(
-                {"error": "Nodes not found"}, status=status.HTTP_400_BAD_REQUEST
-            )
+        # if not edges:
+        #     return Response(
+        #         {"error": "Nodes not found"}, status=status.HTTP_400_BAD_REQUEST
+        #     )
 
         if not type:
             return Response(

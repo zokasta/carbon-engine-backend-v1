@@ -2,8 +2,8 @@
   {
     "id": "input_node",
     "position": {
-      "x": 253.298351223552,
-      "y": 363.0268238605201
+      "x": 200,
+      "y": 200
     },
     "type": "Input",
     "typeFormat": "input",
@@ -15,13 +15,13 @@
       "positionHandel": "right",
       "fields": [
         {
-          "id": 0.9087431316470815,
+          "id": 0.503187191635001,
           "handle": "email_input",
           "title": "email",
           "type": "source"
         },
         {
-          "id": 0.6527479198406607,
+          "id": 0.014945435318627798,
           "handle": "password_input",
           "title": "password",
           "type": "source"
@@ -29,19 +29,13 @@
       ]
     },
     "width": 192,
-    "height": 191,
-    "selected": false,
-    "positionAbsolute": {
-      "x": 253.298351223552,
-      "y": 363.0268238605201
-    },
-    "dragging": false
+    "height": 191
   },
   {
     "id": "output_node_1",
     "position": {
-      "x": 1008.3174120182107,
-      "y": 341.17552964974885
+      "x": 800,
+      "y": 200
     },
     "type": "Output",
     "typeFormat": "output",
@@ -53,13 +47,13 @@
       "positionHandel": "left",
       "fields": [
         {
-          "id": 0.9410777982907461,
+          "id": 0.7312997841320412,
           "handle": "email_output",
           "title": "email",
           "type": "target"
         },
         {
-          "id": 0.6378714985833478,
+          "id": 0.547180796481076,
           "handle": "password_output",
           "title": "password",
           "type": "target"
@@ -67,51 +61,27 @@
       ]
     },
     "width": 192,
-    "height": 191,
-    "selected": false,
-    "positionAbsolute": {
-      "x": 1008.3174120182107,
-      "y": 341.17552964974885
-    },
-    "dragging": false
+    "height": 191
   },
   {
-    "id": "Plugin_1738744348241",
+    "id": "Plugin_1738916480278",
     "type": "Plugin",
     "position": {
-      "x": 503.5256293984038,
-      "y": 318.3008880199225
+      "x": 528,
+      "y": 203
     },
+    "title": "this is ",
     "data": {
       "name": "Email Validator",
-      "id": 0.002880512170794214
-    },
-    "width": 152,
-    "height": 43,
-    "selected": true,
-    "positionAbsolute": {
-      "x": 503.5256293984038,
-      "y": 318.3008880199225
-    },
-    "dragging": false
-  },
-  {
-    "id": "Plugin_1738744363378",
-    "type": "Plugin",
-    "position": {
-      "x": 762.781630629713,
-      "y": 306.3515938531265
-    },
-    "data": {
-      "name": "Email Validator",
-      "id": 0.14045926108703988
+      "id": 0.011399938745929816,
+      "items": []
     },
     "width": 152,
     "height": 43,
     "selected": false,
     "positionAbsolute": {
-      "x": 762.781630629713,
-      "y": 306.3515938531265
+      "x": 528,
+      "y": 203
     },
     "dragging": false
   }

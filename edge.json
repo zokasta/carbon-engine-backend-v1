@@ -1,38 +1,29 @@
 [
   {
     "source": "input_node",
+    "sourceHandle": "email_input",
+    "target": "Plugin_1738916480278",
+    "targetHandle": "h1",
+    "type": "custom",
+    "data": {},
+    "id": "reactflow__edge-input_nodeemail_input-Plugin_1738916480278h1"
+  },
+  {
+    "source": "Plugin_1738916480278",
+    "sourceHandle": "h2",
+    "target": "output_node_1",
+    "targetHandle": "email_output",
+    "type": "custom",
+    "data": {},
+    "id": "reactflow__edge-Plugin_1738916480278h2-output_node_1email_output"
+  },
+  {
+    "source": "input_node",
     "sourceHandle": "password_input",
     "target": "output_node_1",
     "targetHandle": "password_output",
     "type": "custom",
     "data": {},
     "id": "reactflow__edge-input_nodepassword_input-output_node_1password_output"
-  },
-  {
-    "source": "input_node",
-    "sourceHandle": "email_input",
-    "target": "Plugin_1738744348241",
-    "targetHandle": "h1",
-    "type": "custom",
-    "data": {},
-    "id": "reactflow__edge-input_nodeemail_input-Plugin_1738744348241h1"
-  },
-  {
-    "source": "Plugin_1738744348241",
-    "sourceHandle": "h2",
-    "target": "Plugin_1738744363378",
-    "targetHandle": "h1",
-    "type": "custom",
-    "data": {},
-    "id": "reactflow__edge-Plugin_1738744348241h2-Plugin_1738744363378h1"
-  },
-  {
-    "source": "Plugin_1738744363378",
-    "sourceHandle": "h2",
-    "target": "output_node_1",
-    "targetHandle": "email_output",
-    "type": "custom",
-    "data": {},
-    "id": "reactflow__edge-Plugin_1738744363378h2-output_node_1email_output"
   }
 ]
