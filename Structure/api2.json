@@ -1,0 +1,296 @@
+{
+  "api_id": "this is api id",
+  "filename": "makegame",
+  "type": "post",
+  "elements": [
+    {
+      "element_id": "input_1739782913950",
+      "name": "Input Node",
+      "type": "input_node",
+      "nodes": [
+        {
+          "node_id": "email_input_node",
+          "display_name": "email"
+        },
+        {
+          "node_id": "password_input_node",
+          "display_name": "password"
+        }
+      ]
+    },
+    {
+      "element_id": "email_validator",
+      "name": "Email Validator",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783003596"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783003596"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_error_1739783003596"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_error_1739783003597"
+        }
+      ]
+    },
+    {
+      "element_id": "password_validator",
+      "name": "Password Validator",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783031912"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783031912"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_error_1739783031912"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_error_1739783031913"
+        }
+      ]
+    },
+    {
+      "element_id": "message",
+      "name": "Message",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783037749"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783037749"
+        }
+      ]
+    },
+    {
+      "element_id": "message",
+      "name": "Message",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783048959"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783048959"
+        }
+      ]
+    },
+    {
+      "element_id": "Output_1739783061860",
+      "name": "Output Node",
+      "type": "output_node",
+      "nodes": [
+        {
+          "node_id": "error_output_node",
+          "display_name": "error"
+        }
+      ]
+    },
+    {
+      "element_id": "Output_1739783082619",
+      "name": "Output Node",
+      "type": "output_node",
+      "nodes": [
+        {
+          "node_id": "error_output_node",
+          "display_name": "error"
+        }
+      ]
+    },
+    {
+      "element_id": "selector",
+      "name": "Selector",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783092151"
+        },
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783092152"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783092151"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_error_1739783092151"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_error_1739783092152"
+        }
+      ]
+    },
+    {
+      "element_id": "message",
+      "name": "Message",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783103800"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783103800"
+        }
+      ]
+    },
+    {
+      "element_id": "Output_1739783131190",
+      "name": "Output Node",
+      "type": "output_node",
+      "nodes": [
+        {
+          "node_id": "error_output_node",
+          "display_name": "error"
+        }
+      ]
+    },
+    {
+      "element_id": "token",
+      "name": "Token",
+      "type": "plugin",
+      "nodes": [
+        {
+          "handel": "target",
+          "node_id": "node_in_1739783185892"
+        },
+        {
+          "handel": "source",
+          "node_id": "node_out_1739783185892"
+        }
+      ]
+    },
+    {
+      "element_id": "Output_1739783197598",
+      "name": "Output Node",
+      "type": "output_node",
+      "nodes": [
+        {
+          "node_id": "token_output_node",
+          "display_name": "token"
+        },
+        {
+          "node_id": "user_output_node",
+          "display_name": "user"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge_id_1",
+      "source_id": "input_1739782913950",
+      "target_id": "Plugin_1739783029213",
+      "source_node_id": "email_input_node",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_2",
+      "source_id": "input_1739782913950",
+      "target_id": "Plugin_1739783033878",
+      "source_node_id": "password_input_node",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_3",
+      "source_id": "Plugin_1739783033878",
+      "target_id": "Plugin_1739783039226",
+      "source_node_id": "plugin_output",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_4",
+      "source_id": "Plugin_1739783029213",
+      "target_id": "Plugin_1739783051617",
+      "source_node_id": "plugin_output",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_5",
+      "source_id": "Plugin_1739783039226",
+      "target_id": "Output_1739783061860",
+      "source_node_id": "plugin_output",
+      "target_node_id": "error_output_node"
+    },
+    {
+      "edge_id": "edge_id_6",
+      "source_id": "Plugin_1739783051617",
+      "target_id": "Output_1739783082619",
+      "source_node_id": "plugin_output",
+      "target_node_id": "error_output_node"
+    },
+    {
+      "edge_id": "edge_id_7",
+      "source_id": "Plugin_1739783029213",
+      "target_id": "Plugin_1739783098945",
+      "source_node_id": "plugin_output",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_8",
+      "source_id": "Plugin_1739783033878",
+      "target_id": "Plugin_1739783098945",
+      "source_node_id": "plugin_output",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_9",
+      "source_id": "Plugin_1739783098945",
+      "target_id": "Plugin_1739783125170",
+      "source_node_id": "plugin_output",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_10",
+      "source_id": "Plugin_1739783125170",
+      "target_id": "Output_1739783131190",
+      "source_node_id": "plugin_output",
+      "target_node_id": "error_output_node"
+    },
+    {
+      "edge_id": "edge_id_11",
+      "source_id": "Plugin_1739783098945",
+      "target_id": "Plugin_1739783190862",
+      "source_node_id": "plugin_output",
+      "target_node_id": "plugin_input"
+    },
+    {
+      "edge_id": "edge_id_12",
+      "source_id": "Plugin_1739783190862",
+      "target_id": "Output_1739783197598",
+      "source_node_id": "plugin_output",
+      "target_node_id": "token_output_node"
+    },
+    {
+      "edge_id": "edge_id_13",
+      "source_id": "Plugin_1739783098945",
+      "target_id": "Output_1739783197598",
+      "source_node_id": "plugin_output",
+      "target_node_id": "user_output_node"
+    }
+  ]
+}

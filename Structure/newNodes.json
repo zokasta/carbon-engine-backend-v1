@@ -1,0 +1,24 @@
+{
+    "id":"this is element id",
+    "type":"element type",
+    "title":"element title",
+    "nodes":[
+        {
+            "id":"`node-out-${new Date().getTime()}`",
+            "title":"this is title",
+            "className": "bg-red-500",
+            "style": { "top": -5 },
+            "positionHandel":"Position.Top",
+            "handleType":"target | source",
+            "hint":"you can add hint hear",
+            "position":""
+           
+        }
+    ],
+    "height":160,
+    "width":160,
+    "selected":false,
+    "position":{"x":1,"y":2},
+    "positionAbsolute":{"x":1,"y":2},
+    "dragging":false
+}

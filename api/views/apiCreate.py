@@ -66,20 +66,27 @@ def generate_function_content(elements :list, edges, file, type):
   
     response_data = []
     for edge in edges: 
+        
         for element in elements:
             if element['element_id'] == edge['source_id']:
                 for node in element['nodes']:
                     if node['node_id'] == edge['source_node_id']:
                         source = node
+                        return str(source)
             if element['element_id'] == edge['target_id']:
                 for node in element['nodes']:
                     if node['node_id'] == edge['target_node_id']:
                         target = node
         
+        
         if source and target:
-            # return str(source)
+            return str(source)
             response_data.append(f"{source['display_name']}:{target['display_name']}")
-              
+            break
+        else:
+            return Response({'error':'source or target not found'})
+
+
     # Build the response line
     if response_data:
         response_line = "return Response({ " + ", ".join(response_data) + " })"

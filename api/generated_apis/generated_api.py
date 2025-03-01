@@ -1,10 +1,1 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
-from ..plugin.load_plugin import load_plugin
-
-@api_view(['POST'])
-def makegame(request):
-	email = request.data.get('email')
-	password = request.data.get('password')
-	return Response({'default':'this is default output'})
+{'node_id': 'email_input_node', 'display_name': 'email'}
